@@ -13,10 +13,7 @@ var uglify = require('gulp-uglify');
 var styleSRC = './src/scss/style.scss';
 var styleDIST = './dist/css/'
 
-var jsSRC = './src/js/script.js';
-var jsDIST = './dist/js/'
 
-var jsFILES = [jsSRC]
 
 gulp.task('style', function(done){
     gulp.src( styleSRC )
@@ -34,17 +31,21 @@ gulp.task('style', function(done){
         done();
 });
 
+var jsSRC = 'src/js/script.js';
+var jsDIST = './dist/js/'
+
+var jsFILES = [jsSRC];
+
 gulp.task('js', function(done){
     
     jsFILES.map(function(entry){
         return browserify({
             entries: [entry]
         })
-
         .transform(babelify, {presets:['env']})
         .bundle()
         .pipe( source(entry))
-        .pipe( rename({ extension: 'min.js'}))
+        .pipe( rename({ extname: '.min.js'}))
         .pipe( buffer() )
         .pipe( sourcemaps.init({loadMaps: true}))
         .pipe( uglify() )
