@@ -1,4 +1,6 @@
-body{
-    background: #CCC;
-    color: #F00;
+@import 'base/variables';
+
+body {
+    background: $bg;
+    color: $red;
 }
