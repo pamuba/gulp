@@ -50,6 +50,7 @@ gulp.task('js', function(done){
         .pipe( sourcemaps.init({loadMaps: true}))
         .pipe( uglify() )
         .pipe( sourcemaps.write( './' ))
+        .pipe(rename((file) => {file.dirname = './';}))
         .pipe( gulp.dest(jsDIST))
     })
 
@@ -63,6 +64,9 @@ gulp.task('js', function(done){
     //uglify
     //write sourcemaps
     //dist
+
+
+
     done();
 });
 
