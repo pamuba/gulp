@@ -32,7 +32,7 @@ gulp.task('style', function(done){
 });
 
 var jsSRC = 'src/js/script.js';
-var jsDIST = './dist/js/'
+var jsDIST = 'dist/js/';
 
 var jsFILES = [jsSRC];
 
@@ -50,7 +50,7 @@ gulp.task('js', function(done){
         .pipe( sourcemaps.init({loadMaps: true}))
         .pipe( uglify() )
         .pipe( sourcemaps.write( './' ))
-        .pipe( gulp.dest( jsDIST ))
+        .pipe( gulp.dest(jsDIST))
     })
 
     //browserify
