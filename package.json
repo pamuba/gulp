@@ -12,9 +12,15 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
   },
   "dependencies": {
     "gulp-rename": "^2.0.0"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "chrome >= 45",
+    "IE 11"
+  ]
 }
